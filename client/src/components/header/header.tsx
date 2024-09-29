@@ -11,7 +11,7 @@ import { login } from "../../api/authLogin";
 const Header = () => {
   const currentPage = useLocation().pathname;
   const [show, setShow] = useState(false);
-
+  const [error, setError] = useState<string | null>(null);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -31,12 +31,20 @@ const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
 
 const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setError(null);
+
+    if (!loginData.username || !loginData.password) {
+      setError('All fields are required');
+      return;
+    }
+
     try {
       // Call the login API endpoint with loginData
       const data = await login(loginData);
       // If login is successful, call Auth.login to store the token in localStorage
       auth.login(data.token);
     } catch (err) {
+      setError('Invalid username or password');
       console.error('Failed to login', err);  // Log any errors that occur during login
     }
   };
@@ -76,8 +84,11 @@ const handleSubmit = async (e: FormEvent) => {
             <div className="mb-3">
               <label className="form-label">Password</label>
               <input type="password" className="form-control" name="password" placeholder="Enter password" value={loginData.password || ''} onChange={handleChange} />
-            </div> 
-            <p className="signupTab">Dont have an account? <Link onClick={handleClose} to='/signup'>Sign up</Link></p>
+            </div>
+            <div className="error-message1" style={{ visibility: error ? 'visible' : 'hidden' }}>
+              {error}
+            </div>
+            <p className="signupTab">Dont have an account? <Link onClick={handleClose} to='/signup' className="signup">Sign up</Link></p>
 
             <div className="loginBtn-container">
               <button className="loginBtn" type="submit">Log in</button>
