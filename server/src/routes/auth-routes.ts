@@ -34,8 +34,8 @@ export const login = async (req: Request, res: Response) => {
 
 export const signUp = async (req: Request, res: Response) => {
   try {
-    const { username, email, password } = req.body;
-    const newUser = await User.create({ username, email, password });
+    const { username, password } = req.body;
+    const newUser = await User.create({ username, password });
 
     console.log(newUser);
     

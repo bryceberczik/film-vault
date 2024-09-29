@@ -28,6 +28,7 @@ header {
     font-weight: 450;
     font-size: 30px;
     margin: 0 20px 0 20px;
+    cursor: pointer;
 }
 
 .search {
@@ -37,6 +38,17 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    padding: 10px 15px 10px 15px;
+    border: 1px solid #555;
+    border-radius: 10px;
+    transition: ease 0.3s;
+}
+
+.search:hover {
+
+    color: #AAAAAA;
+    border: 1px solid #555;
 }
 
 .options {
@@ -46,4 +58,104 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    transition: ease 0.3s;
+}
+
+.options:hover {
+
+    color: #AAAAAA;
+}
+
+.active {
+
+    color: black;
+}
+
+.active:hover .options{
+
+    color: black;
+}
+
+.rest {
+
+    color: black;
+    text-decoration: none;
+}
+
+.custom-modal-header {
+
+    border-bottom: none;
+  }
+  
+  .custom-modal-footer {
+
+    border-top: none;
+    display: flex;
+    justify-content: center;
+}
+
+  .custom-modal-title {
+
+    width: 100%;
+    text-align: center;
+  }
+
+  .loginBtn {
+
+    padding: 10px 40px 10px 40px;
+    border-radius: 20px;
+    margin: 30px 0 20px 0;
+    background-color: goldenrod;
+    border: none;
+    transition: ease 0.3s;
+}
+
+.loginBtn:hover {
+
+    background-color: greenyellow;
+}
+
+.form-label {
+
+    margin-left: 25px;
+}
+
+.form-control {
+    
+    width: 90%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    font-size: 20px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    margin: 0 auto;
+
+}
+
+.form-control:focus {
+
+    outline: none;
+    box-shadow: none;
+}
+
+.loginBtn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.signupTab {
+
+    text-align: center;
+    margin: 0;
+}
+
+.signup {
+
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
 }
