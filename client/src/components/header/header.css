@@ -170,3 +170,18 @@ header {
     height: 1em;
     margin: 20px 0 20px 21px;
   }
+
+  .canvOpt {
+
+    color: black;
+    text-decoration: none;
+    margin: 50px 0 50px 0;
+    text-align: left;
+    cursor: pointer;
+    transition: ease 0.3s;
+  }
+
+  .canvOpt:hover {
+
+    color: grey;
+  }

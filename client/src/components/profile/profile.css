@@ -1,0 +1,24 @@
+.profile-container {
+
+    border: 2px solid black;
+    border-radius: 100%;
+    transition: ease 0.3s;
+}
+
+.profile-icon {
+
+    font-size: 25px;
+    margin: 7px 10px 5px 10px;
+    transition: ease 0.3s;
+    cursor: pointer;
+}
+
+.profile-icon:hover {
+
+    color: grey;
+}
+
+.profile-icon:hover .profile-container {
+    
+    border: 2px solid grey;
+}
